@@ -3,31 +3,154 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--color-background: #000c18;
+	--color-background-light: #253444;
+	--color-background-lighter: #576d85;
+	--color-background-alt: #001020;
+	--color-text: #f8f9fadc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme='light'] {
+	--color-background: #f8f9fadc;
+	--color-background-light: #f8f9fadc;
+	--color-background-alt: #f8f9fadc;
+	--color-text: #000c18;
 }
 
+html {
+	color: var(--color-text);
+	background: var(--color-background);
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 1rem 0 0.5rem;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+}
+
+p {
+	margin-bottom: 1em;
+	line-height: 1.5;
+}
+
+a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+li {
+	margin: 0.5em 0;
+}
+
+code {
+	font-family: 'Jetbrains Mono', Courier, monospace;
+	background-color: var(--color-background-light);
+	border: 1px solid #dfe2e5be;
+	font-size: 0.9em;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	margin-bottom: 0.6em;
+}
+
+pre {
+	background-color: var(--color-background-alt);
+	border: 1px solid #dfe2e5c9;
+	font-size: 0.9em;
+	padding: 2em;
+	border-radius: 3px;
+	overflow: auto;
+	margin-bottom: 1em;
+}
+
+pre code {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+blockquote {
+	margin: 0 0 1em;
+	padding: 0.5em 1em;
+	border-left: 0.25em solid #dfe2e5;
+	color: #6a737d;
+	background-color: #f8f8f8;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1em 0;
+}
+
+th,
+td {
+	border: 1px solid #dfe2e5;
+	padding: 0.5em 1em;
+	text-align: left;
+}
+
+th {
+	background-color: #f8f8f8;
+	font-weight: bold;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 1em;
+}
+
+.blog-listing {
+	color: var(--color-text);
+	font-size: 1.3rem;
+	font-weight: 400;
+	padding: 0.7rem 1rem;
+
+	transition: all 0.06s ease-in-out;
+	opacity: 0.9;
+}
+
+.blog-listing:hover {
+	background-color: var(--color-background-alt);
+	cursor: pointer;
+	text-decoration: none;
+	opacity: 1;
 }
