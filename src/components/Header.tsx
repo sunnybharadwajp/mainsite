@@ -11,7 +11,7 @@ const navLinks = [
 		href: '/',
 	},
 	{
-		label: 'Work',
+		label: 'About',
 		href: '/work',
 	},
 	{
@@ -32,7 +32,7 @@ const HeaderComponent = () => {
 	const pathname = `/${usePathname().split('/')[1]}`;
 	return (
 		<>
-			<nav className="flex justify-between items-center py-2 px-4">
+			<nav className="flex justify-between items-center pt-3 pb-1 px-4">
 				<div className="left">
 					<Link href="/">
 						{/* <Image
@@ -43,7 +43,7 @@ const HeaderComponent = () => {
 						height={25}
 					/> */}
 					</Link>
-					<ul className="flex">
+					<ul className="flex  gap-2">
 						{navLinks.map((link) => (
 							<li key={link.href}>
 								<Link

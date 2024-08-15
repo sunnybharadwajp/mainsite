@@ -20,10 +20,11 @@ const BlogListing = ({ slug, title, createdAt }: BlogListingProps) => {
 		const date = new Date(createdAt);
 		setFormattedDate(`${date.toLocaleDateString()} - ${date.toLocaleTimeString()}`);
 	}, [createdAt]);
+
 	return (
 		<Link href={`/blog/${slug}`} className="block blog-listing pt-1">
 			<p className="m-0">{title}</p>
-			<p className=" text-sm pt-1 pb-2 m-0 opacity-80">{formattedDate}</p>
+			<p className="text-sm pt-1 pb-2 m-0 opacity-80">{formattedDate}</p>
 		</Link>
 	);
 };

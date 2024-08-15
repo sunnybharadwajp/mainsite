@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Lato } from 'next/font/google';
+
 import './globals.css';
 import HeaderComponent from '@/components/Header';
 
@@ -7,7 +8,10 @@ import ThemeContext from '@/lib/contexts/ThemeContext';
 
 import Wrapper from './Wrapper';
 
-const inter = Inter({ subsets: ['latin'] });
+const lato = Lato({
+	weight: ['400', '300', '700'], // Specify the weights you need
+	subsets: ['latin'], // Specify subsets if needed
+});
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -23,7 +27,7 @@ export default function RootLayout({
 		<>
 			<html lang="en">
 				<head />
-				<body className={inter.className}>
+				<body className={lato.className}>
 					<ThemeContext>
 						<Wrapper>
 							<HeaderComponent />
